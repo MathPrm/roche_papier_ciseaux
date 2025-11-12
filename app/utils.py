@@ -6,11 +6,10 @@ from readchar import (
     readkey
 )
 from app.display import (
-    letter_by_letter,
-    clear_terminal
+    letter_by_letter
 )
 
-def clear_selection(number_options: int):
+def clear_selection(number_options: int) -> None:
     '''
     This function clear and refresh the content displayed.
     '''
@@ -24,7 +23,7 @@ def clear_selection(number_options: int):
 if os.name == 'nt':
     os.system('') 
 
-def validate_choice(options: list[str], start_message: str, end_message: str = ''):
+def validate_choice(options: list[str], start_message: str) -> str:
     '''
     This function allow the user to choose between multiple choice.
     
@@ -35,19 +34,19 @@ def validate_choice(options: list[str], start_message: str, end_message: str = '
     
     letter_by_letter(start_message)
     
-    number_options = len(options)
+    number_options: int = len(options)
     current_selection: int = 0
     key_down = key.DOWN
     key_up = key.UP
-    is_run = True
+    is_run: bool = True
     
     while is_run:
         
         for i in range(number_options):
-            arrow = "\u25B6" if i == current_selection else " "
+            arrow: str = "\u25B6" if i == current_selection else " "
             print(f" {arrow}  {options[i]}")
         
-        key_pressed = readkey()
+        key_pressed: str = readkey()
         
         if key_pressed == key_down:
             current_selection = (current_selection + 1) % number_options
@@ -60,7 +59,7 @@ def validate_choice(options: list[str], start_message: str, end_message: str = '
             is_run = False
     return options[current_selection]
     
-def press_enter():
+def press_enter() -> None:
     key.ENTER
             
         

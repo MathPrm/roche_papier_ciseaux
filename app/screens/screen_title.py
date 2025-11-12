@@ -4,7 +4,7 @@ from app.display import (
 )
 import threading
 
-def show_screen_title():
+def show_screen_title() -> None:
     '''
     This function shows the starting  screen.
     '''

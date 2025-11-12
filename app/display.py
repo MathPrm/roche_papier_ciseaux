@@ -5,7 +5,7 @@ import time
 import os
 import threading
 
-def show_title():
+def show_title() -> None:
     '''
     This function display game's title.
     '''
@@ -21,7 +21,7 @@ def show_title():
      |_|_\\ \\___/ \\___|_||_|___| |_|   /_/ \\_\\|_| |___|___|_|_\\    \\___|___|___/___/_/ \\_\\ \\___//_/\\_\\\
      ''')
 
-def blinking_text(blinking_text: str, fixed_text: str, interval: float, stop_event: threading.Event):
+def blinking_text(blinking_text: str, fixed_text: str, interval: float, stop_event: threading.Event) -> None:
     '''
     This function makes blinking effect on text.
     
@@ -32,7 +32,7 @@ def blinking_text(blinking_text: str, fixed_text: str, interval: float, stop_eve
     
     # detects os system, nt stands for modern windows versions
     if os.name == 'nt':
-        # init virtual windows console to detetct ANSI
+        # init virtual windows console to detect ANSI
         os.system('')
         
     try:
