@@ -80,3 +80,5 @@ def letter_by_letter(text):
     for i in range(len(text)):
         print(text[i], end="", flush=True)
         time.sleep(0.05)
+
+        

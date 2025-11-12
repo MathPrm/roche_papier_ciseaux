@@ -1,13 +1,12 @@
 from app.display import (
-    clear_terminal,
-    letter_by_letter
-    )
+    clear_terminal
+)
 from app.utils import (
-    validate_choice,
     press_enter
 )
 from app.screens.screen_title import (show_screen_title)
 from app.screens.screen_select_username import (select_username)
+from app.screens.screen_select_attack import (player_choose_attack)
 
 def main():
     '''main loop of the game'''
@@ -23,8 +22,8 @@ def main():
     
     press_enter()
     
-    
-    print(player_name + "👊✋️✌️")
+    # select attack screen
+    player_choose_attack(player_name)
     
    
         
