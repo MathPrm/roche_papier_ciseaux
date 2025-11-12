@@ -25,10 +25,10 @@ def select_username():
                 continue
         else:
             print("Ton nom est invalide ! Caractères acceptés : lettres, chiffres, tirets ou underscores.")
+            continue
         wait_for_username = False
             
         user_choice = validate_choice(["oui","non"], f"\nTu te nommes-tu {player_name}, c'est bien cela ?\n")
-        print(user_choice)
         if user_choice == "oui":
             clear_terminal()
             return player_name
