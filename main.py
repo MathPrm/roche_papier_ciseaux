@@ -12,17 +12,19 @@ from app.screens.screen_select_username import (select_username)
 def main():
     '''main loop of the game'''
 
+    # starting screen
     show_screen_title()
     
     press_enter()
     clear_terminal()
 
-    select_username()
+    # select username screen
+    player_name = select_username()
     
     press_enter()
     
     
-    print("toto")
+    print(player_name + "👊✋️✌️")
     
    
         

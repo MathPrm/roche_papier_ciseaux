@@ -31,6 +31,7 @@ def select_username():
         print(user_choice)
         if user_choice == "oui":
             clear_terminal()
+            return player_name
         else:
             clear_terminal()
             select_username()
