@@ -38,7 +38,7 @@ Assurez-vous d'avoir [Python 3.10](https://www.python.org/downloads/) ou une ver
 
 3.  **Installez les dépendances :**
     ```bash
-    pip install -r requirements.txt
+    pip install -r requirement.txt
     ```
 
 ## 🚀 Utilisation
