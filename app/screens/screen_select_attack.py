@@ -19,11 +19,14 @@ def player_choose_attack(username: str) -> str:
     
     def turn_winner():
         if attack == computer_attack_str:
+            print(f"Georges a joué : {computer_attack_str}")
             print("Egalité entre les 2 joueurs !")
         elif (attack == rock and computer_attack_str == paper) or (attack == scissors and computer_attack_str == rock) or (attack == paper and computer_attack_str == scissors):
+            print(f"Georges a joué : {computer_attack_str}")
             print("Georges le Malin remporte le tour !\nAppuie sur entrer pour jouer le tour suivant.")
             scores["computer"] += 1
         else:
+            print(f"Georges a joué : {computer_attack_str}")
             print("Tu as remporté le tour !\nAppuie sur entrer pour jouer le tour suivant.")
             scores["player"] += 1
     
@@ -40,7 +43,7 @@ def player_choose_attack(username: str) -> str:
         if user_choice == "Finir la partie":
             print(f"{username}: {scores["player"]} VS Georges: {scores["computer"]}")
             if scores["player"] > scores["computer"]:
-                print(f"Félicitations {username} ! Vous avez gagné ! 🥳")
+                print(f"Félicitations {username} ! Tu as gagné ! 🥳")
                 player_continue_playing = False
             elif scores["player"] == scores["computer"]:
                 print(f"Ça, c'est une sacrée égalité {username} ! 😵‍💫")

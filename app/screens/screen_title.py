@@ -16,7 +16,7 @@ def show_screen_title() -> None:
     # thread to excute blinking action without disrupting the program
     blinking_thread = threading.Thread(
         target = blinking_text,
-        args = (arrow, '  start', 0.5, stop_blink_event)
+        args = (arrow, '  Appuyez sur ENTRER', 0.5, stop_blink_event)
     )
     blinking_thread.start()
     

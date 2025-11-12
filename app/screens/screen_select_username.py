@@ -15,7 +15,7 @@ def select_username() -> str:
     letter_by_letter("Qui ose défier Georges le Malin ?!\n")
     wait_for_username: bool = True
     while wait_for_username:
-        letter_by_letter("Entres ton nom : ")
+        letter_by_letter("Entre ton nom : ")
         player_name: str = input().strip()
         
         # regex : at least one caracter, are allowed : "-", "_", letters and numbers
@@ -26,12 +26,17 @@ def select_username() -> str:
         else:
             print("Ton nom est invalide ! Caractères acceptés : lettres, chiffres, tirets ou underscores.")
             continue
-        wait_for_username = False
             
         user_choice: str = validate_choice(["oui","non"], f"\nTu te nommes-tu {player_name}, c'est bien cela ?\n")
+
         if user_choice == "oui":
             clear_terminal()
+            wait_for_username = False
             return player_name
+        elif user_choice == "non":
+            continue
         else:
             clear_terminal()
-            select_username()
+            wait_for_username = False
+            return player_name
+        
