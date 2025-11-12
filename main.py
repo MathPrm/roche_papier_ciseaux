@@ -1,32 +1,32 @@
-import sys
-import threading
-from app.display import *
+from app.display import (
+    clear_terminal,
+    letter_by_letter
+    )
+from app.utils import (
+    validate_choice,
+    press_enter
+)
+from app.screens.screen_title import (show_screen_title)
+from app.screens.screen_select_username import (select_username)
 
 def main():
     '''main loop of the game'''
+
+    show_screen_title()
     
-    arrow: str = "\u25B6"
-    stop_blink_event = threading.Event()
-    
-    show_title();
-    
-    # thread to excute blinking action without disrupting the program
-    blinking_thread = threading.Thread(
-        target = blinking_text,
-        args = (arrow, '  start', 0.5, stop_blink_event)
-    )
-    blinking_thread.start()
-    
-    input()
-    
-    stop_blink_event.set()
-    
-    blinking_thread.join()
-    
+    press_enter()
     clear_terminal()
+
+    select_username()
     
-    print("prout")
+    press_enter()
     
+    
+    print("toto")
+    
+   
+        
+
 
 # entry point
 if __name__ == "__main__":

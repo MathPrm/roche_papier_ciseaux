@@ -1,3 +1,5 @@
+# This file contains the functions that manage the display.
+
 import sys
 import time
 import os
@@ -34,10 +36,8 @@ def blinking_text(blinking_text: str, fixed_text: str, interval: float, stop_eve
         os.system('')
         
     try:
-        # Tente de récupérer la taille du terminal
         columns = os.get_terminal_size().columns
     except OSError:
-        # Cas de repli si la taille ne peut pas être déterminée (ex: environnement sans terminal)
         columns = full_text_length
     
     full_text_length = len(blinking_text) + len(fixed_text)
@@ -69,3 +69,14 @@ def clear_terminal():
     'cls' is for Windows and 'clear' is for Linux.macOS
     '''
     os.system('cls' if os.name == 'nt' else 'clear')
+    
+def letter_by_letter(text):
+    '''
+    Write text letter by letter.
+    
+    Params:
+        - text (str): The text that should be displayed letter by letter.
+    '''
+    for i in range(len(text)):
+        print(text[i], end="", flush=True)
+        time.sleep(0.05)
